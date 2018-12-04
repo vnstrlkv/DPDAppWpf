@@ -9,7 +9,7 @@ using DPDAppWpf.DPDOrder;
 
 namespace DPDAppWpf.Model
 {
-   public abstract class Auth 
+   public abstract class Auth1
     {
         public void AuthSet(DPDAppWpf.DPDCalc.auth a, long ClientNumber, string Key)
         {

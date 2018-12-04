@@ -4650,14 +4650,15 @@ namespace DPDAppWpf.DPDOrder {
         DPDAppWpf.DPDOrder.createOrderAsyncResponse DPDAppWpf.DPDOrder.DPDOrder.createOrderAsync(DPDAppWpf.DPDOrder.createOrderAsyncRequest request) {
             return base.Channel.createOrderAsync(request);
         }
-        
+       
+        /*
         public DPDAppWpf.DPDOrder.asyncResponse createOrderAsync(DPDAppWpf.DPDOrder.dpdOrdersData orders) {
             DPDAppWpf.DPDOrder.createOrderAsyncRequest inValue = new DPDAppWpf.DPDOrder.createOrderAsyncRequest();
             inValue.orders = orders;
             DPDAppWpf.DPDOrder.createOrderAsyncResponse retVal = ((DPDAppWpf.DPDOrder.DPDOrder)(this)).createOrderAsync(inValue);
             return retVal.@return;
         }
-        
+        */
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<DPDAppWpf.DPDOrder.createOrderAsyncResponse> DPDAppWpf.DPDOrder.DPDOrder.createOrderAsyncAsync(DPDAppWpf.DPDOrder.createOrderAsyncRequest request) {
             return base.Channel.createOrderAsyncAsync(request);
