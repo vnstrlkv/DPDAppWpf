@@ -16,11 +16,13 @@ namespace DPDAppWpf.ViewModel
 {
     class DPDVM
     {
-       private IEnumerable<DPDCities> Cities;
-       private DPDAppWpf.DPDCalc.auth Auth;
+       private IEnumerable<DPDCities> cities;        
+       private DPDAppWpf.DPDCalc.auth _auth;       
         private string clientKey;
         private long clientNumber;
 
+        public IEnumerable<DPDCities> Cities { get => cities; set { cities = value; OnPropertyChanged("Cities"); } }
+        public DPDCalc.auth Auth { get => _auth; set { _auth = value; OnPropertyChanged("Auth"); } }
         public string ClientKey { get => clientKey; set  { clientKey = value; OnPropertyChanged("ClientKey"); } }
         public long ClientNumber { get => clientNumber; set { clientNumber = value; OnPropertyChanged("ClientNumber"); } }
 
@@ -42,14 +44,22 @@ namespace DPDAppWpf.ViewModel
             Auth.clientNumber = clientNumber;
         }
 
-        public RelayCommand GetPricesCom => new RelayCommand(o =>
+
+
+        //Command
+        public RelayCommand GetAuthCommand => new RelayCommand(o =>
         {
-            //Логика команды
-            //   GetPrices();
+            GetAuth();
+        });
+
+        public RelayCommand GetCitiesCommand => new RelayCommand(o =>
+        {
+            Cities = GetDPDCities();
         });
 
 
 
+        //Command
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
